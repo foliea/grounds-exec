@@ -68,6 +68,15 @@ describe('Connection', function() {
         });
     });
 
+    context('when language code is empty', function() {
+        // reuse previous test to keep things DRY
+    });
+
+    context('when code is empty', function() {
+        // should work (fix bad request response in the
+        // same time
+    });
+
     it('prevents run request spam', function(done) {
         client.on('connect', function(data) {
             client.on('run', function(data){

@@ -11,6 +11,8 @@ var dockerRunStub = {
     }
 };
 
+// Remove Docker API dependency (all unit tests should be independant)
+
 describe('Runner', function() {
     var sleepExample  = Factory.create('sleepExample');
 
@@ -19,6 +21,10 @@ describe('Runner', function() {
     });
 
     describe('#run()', function() {
+        it('returns its output', function(done) {
+            //if possible test both stdout and stderr at the same time
+        });
+
         it('returns its container status code', function(done) {
             runner.on('output', function(data) {
                 if (data.stream !== 'status') return;
